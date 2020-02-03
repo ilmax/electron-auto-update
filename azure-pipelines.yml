@@ -23,11 +23,17 @@ jobs:
   - task: FileTransform@2
     inputs:
       folderPath: '$(System.DefaultWorkingDirectory)'
-      xmlTargetFiles: ''
+      xmlTransformationRules: ''
       jsonTargetFiles: 'vue.config.js'
 
   - script: yarn
     displayName: 'Install dependencies'
 
   - script: yarn electron:build
-    displayName: 'Build project'    
+    displayName: 'Build project'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact'
+    inputs:
+      pathtoPublish: $(Build.ArtifactStagingDirectory)
+      artifactName: 'drop'     
