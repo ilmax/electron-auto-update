@@ -24,7 +24,7 @@ jobs:
     inputs:
       folderPath: '$(System.DefaultWorkingDirectory)'
       xmlTransformationRules: ''
-      jsonTargetFiles: 'vue.config.js'
+      jsonTargetFiles: 'buildconfig.json'
 
   - script: yarn
     displayName: 'Install dependencies'
