@@ -1,0 +1,33 @@
+trigger:
+- master
+# Don't run against PRs
+pr: none  
+
+jobs:
+- job: BuildJob
+  displayName: 'Build electron application'
+  strategy:
+    matrix:  
+      windows:  
+        pool: windows-latest
+      mac: 
+        pool: macOS-latest
+    maxParallel: 2
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+    displayName: 'Install Node.js'
+  - task: FileTransform@2
+    inputs:
+      folderPath: '$(System.DefaultWorkingDirectory)'
+      xmlTargetFiles: ''
+      jsonTargetFiles: 'vue.config.js'
+
+  - script: yarn
+    displayName: 'Install dependencies'
+
+  - script: yarn electron:build
+    displayName: 'Build project'    
