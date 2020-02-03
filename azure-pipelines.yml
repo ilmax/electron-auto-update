@@ -9,9 +9,9 @@ jobs:
   strategy:
     matrix:  
       windows:  
-        pool: windows-latest
+        vmImage: windows-latest
       mac: 
-        pool: macOS-latest
+        vmImage: macOS-latest
     maxParallel: 2
   pool:
     vmImage: 'ubuntu-latest'
