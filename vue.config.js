@@ -18,7 +18,7 @@ module.exports = {
         win: {
           compression: "store"
         },
-        max: {
+        mac: {
           compression: "store"
         }
       }
