@@ -23,8 +23,10 @@ jobs:
   - task: FileTransform@2
     inputs:
       folderPath: '$(System.DefaultWorkingDirectory)'
-      xmlTransformationRules: ''
-      jsonTargetFiles: 'buildconfig.json'
+      xmlTransformationRules: 
+      jsonTargetFiles: |
+        buildconfig.json
+        package.json
 
   - script: yarn
     displayName: 'Install dependencies'
