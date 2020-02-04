@@ -1,5 +1,6 @@
 trigger:
 - master
+
 # Don't run against PRs
 pr: none  
 
@@ -41,7 +42,7 @@ jobs:
   - task: CopyFiles@2
     displayName: 'Copy file to publish directory'
     inputs:
-      SourceFolder: 'dist'
+      SourceFolder: 'dist_electron'
       Contents: |
         *.yml
         *.$(installer_extension)
