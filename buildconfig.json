@@ -11,13 +11,13 @@
         {
             "provider": "generic",
             "url": "https://tsdevstorage.blob.core.windows.net/temp-blob-container",
-            "channel": "beta"
+            "channel": "latest"
         }
     ],
     "win": {
-        "compression": "store"
+        "compression": "normal"
     },
     "mac": {
-        "compression": "store"
+        "compression": "normal"
     }
 }
