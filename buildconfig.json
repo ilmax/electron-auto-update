@@ -1,7 +1,4 @@
 {
-    "directories": {
-        "output": "dist"
-    },
     "productName": "Electron-app-sample",
     "copyright": "Copyright © 2020 ${author}",
     "appId": "my-company.my-app",
