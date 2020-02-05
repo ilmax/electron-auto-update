@@ -51,7 +51,7 @@ jobs:
   - task: PublishBuildArtifacts@1
     displayName: 'Publish artifact'
     inputs:
-      pathtoPublish: 
+      pathtoPublish: $(Build.ArtifactStagingDirectory)
       artifactName: 'drop'     
       
   - task: AzureCLI@2
