@@ -2,7 +2,7 @@
     "productName": "Electron-app-sample",
     "copyright": "Copyright © 2020 ${author}",
     "appId": "my-company.my-app",
-    "artifactName": "${name}_${os}-setup.${ext}",
+    "artifactName": "${name}_${os}-setup-${channel}.${ext}",
     "publish": [
         {
             "provider": "generic",
