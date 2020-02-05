@@ -57,6 +57,6 @@ jobs:
   - task: AzureCLI@2
     inputs:
       azureSubscription: 'AzureRM'
-      scriptType: 'batch'
+      scriptType: 'pscore'
       scriptLocation: 'inlineScript'
       inlineScript: 'az storage blob upload-batch -d "electron-app-container" --account-name "$(Account)" -s "$(Build.ArtifactStagingDirectory)"'
