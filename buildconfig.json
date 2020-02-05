@@ -6,7 +6,7 @@
     "publish": [
         {
             "provider": "generic",
-            "url": "https://tsdevstorage.blob.core.windows.net/temp-blob-container",
+            "url": "https://$(Account).blob.core.windows.net/electron-app-container",
             "channel": "latest"
         }
     ],
