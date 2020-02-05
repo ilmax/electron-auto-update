@@ -58,7 +58,7 @@ jobs:
     displayName: 'Upload to blob storage'
     inputs:
       SourcePath: '$(Build.ArtifactStagingDirectory)'
-      azureSubscription: 'Azure'
+      azureSubscription: 'AzureRM'
       Destination: 'AzureBlob'
       storage: 'electronapp'
       ContainerName: 'electron-app-container'
