@@ -1,0 +1,8 @@
+trigger:
+- master
+
+# Don't run against PRs
+pr: none  
+
+jobs:
+- template: templates/build-template.yml
