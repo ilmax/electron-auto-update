@@ -49,7 +49,16 @@ jobs:
       TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
   - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact'
+    displayName: 'Publish artifact'
     inputs:
       pathtoPublish: $(Build.ArtifactStagingDirectory)
       artifactName: 'drop'     
+
+  - task: AzureFileCopy@3
+    displayName: 'Upload to blob storage'
+    inputs:
+      SourcePath: '$(Build.ArtifactStagingDirectory)'
+      azureSubscription: 'Azure'
+      Destination: 'AzureBlob'
+      storage: 'electronapp'
+      ContainerName: 'electron-app-container'
