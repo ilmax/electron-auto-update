@@ -51,14 +51,12 @@ jobs:
   - task: PublishBuildArtifacts@1
     displayName: 'Publish artifact'
     inputs:
-      pathtoPublish: $(Build.ArtifactStagingDirectory)
+      pathtoPublish: 
       artifactName: 'drop'     
-
-  - task: AzureFileCopy@3
-    displayName: 'Upload to blob storage'
+      
+  - task: AzureCLI@2
     inputs:
-      SourcePath: '$(Build.ArtifactStagingDirectory)'
       azureSubscription: 'AzureRM'
-      Destination: 'AzureBlob'
-      storage: 'electronapp'
-      ContainerName: 'electron-app-container'
+      scriptType: 'batch'
+      scriptLocation: 'inlineScript'
+      inlineScript: 'az storage blob upload-batch -d "electron-app-container" --account-name "$(Account)" -s "$(Build.ArtifactStagingDirectory)"'
